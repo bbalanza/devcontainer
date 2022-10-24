@@ -8,8 +8,7 @@ command_timeout = 2000
 
 format = """
 [┌─────────────────────](bold green)
-[│](bold green)$directory[❯](bold blink)
-[└─](bold green) """
+[└─❯ ](bold green)$username:$directory"""
 
 [username]
 show_always = true
