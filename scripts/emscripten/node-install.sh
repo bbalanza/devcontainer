@@ -11,4 +11,3 @@ EOF
 source $HOME/.zshrc
 print "Installing node 16..."
 nvm install 16 && nvm use 16
-sed -i 's/NODE_JS.*\n/NODE_JS = node/g'

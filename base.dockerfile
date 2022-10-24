@@ -1,4 +1,4 @@
-FROM debian:bookworm
+FROM ubuntu:jammy
 ENV USER=vscode
 ENV HOME /home/${USER}
 WORKDIR /
