@@ -8,7 +8,8 @@ curl \
 ca-certificates \
 git \
 sudo \
-neovim 
+neovim \
+make
 echo '## Creating user...'
 groupadd --gid 1000 $USER 
 useradd --uid 1000 --gid $USER --shell /bin/zsh --create-home ${USER} 
