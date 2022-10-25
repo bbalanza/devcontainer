@@ -2,7 +2,7 @@
 echo "## Installing dependencies..."
 sudo apt-get update 
 sudo apt-get install -y --no-install-recommends \
-build-essential \
-default-jre \
+default-jre-headless \
 python3 \
-python3-pip
+python3-pip \
+llvm 
