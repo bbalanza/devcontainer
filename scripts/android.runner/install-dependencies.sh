@@ -5,6 +5,7 @@ print '## Installing dependencies...'
 sudo apt-get -qq install -y --no-install-recommends \
 python3 \
 python3-pip \
+python3.10-venv \
 python2 \
 openjdk-8-jre-headless \
 unzip \
