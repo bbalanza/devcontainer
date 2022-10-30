@@ -1,8 +1,8 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 set -ex 
-
-which llvm-ar
-which emsdk
+source $HOME/.zshrc
+command -v llvm-ar
+command -v emsdk
 node --version
 npm --version
 python3 --version
@@ -14,13 +14,20 @@ cmake --version
 
 exit_code=0
 
-# test emcc compilation
+testEmccCompilation() {
 echo 'int main() { return 0; }' | emcc -o /tmp/main.js -xc -
 node /tmp/main.js || exit_code=$?
 if [ $exit_code -ne 0 ]; then
   echo "Node exited with non-zero exit code: $exit_code"
   exit $exit_code
 fi
+}
 
-# test embuilder
-embuilder build zlib --force
+testEmbuilder() {
+  # test embuilder
+  embuilder build zlib --force
+}
+
+print "## Testing..."
+testEmccCompilation &>/dev/null
+testEmbuilder &>/dev/null
